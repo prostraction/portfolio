@@ -44,6 +44,8 @@
                     let parseYear = (month) => {
                         let year = (month/12|0)
                         switch (year) {
+                            case 0:
+                                return ""
                             case 1:
                                 return year + " год"
                             case 2:
