@@ -53,7 +53,6 @@
                             default:
                                 return year + " лет"
                         }
-                        return (month/12|0)
                     }
                     let parseMonth = (month) => {
                         let monthDived = month - 12*(month/12|0)
@@ -69,7 +68,6 @@
                             default:
                                 return " " + monthDived + " месяцев"
                         }
-                        return monthDived
                     }
                     let jobs = [];
                     let jobsCount = 2
