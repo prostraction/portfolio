@@ -71,7 +71,7 @@
                                 return " " + monthDived + " месяцев"
                         }
                     }
-                    let jobs = [];
+                    let jobs = []
                     let jobsCount = 2
                     jobs.push({begin: new Date(2021, 10, 1, 0, 0, 0, 0), end: new Date(2022, 5, 1, 0, 0, 0, 0)})
                     jobs.push({begin: new Date(2022, 8, 1, 0, 0, 0, 0), end: new Date()})
@@ -80,8 +80,9 @@
                         let intervalYear = jobs[i].end.getFullYear() - jobs[i].begin.getFullYear()
                         intervalMonth += (12*intervalYear) + jobs[i].end.getMonth() - jobs[i].begin.getMonth() + 1
                     }
-                    document.write(parseYear(intervalMonth) + parseMonth(intervalMonth));</script>
-                    .</p>
+                    document.write(parseYear(intervalMonth) + parseMonth(intervalMonth));
+                </script>
+            .</p>
             <p>В настоящий момент я активно ищу работу на позицию Go разработчика. Рассматриваю варианты как в Москве, так и с релокейтом.</p>
 
         </section>
