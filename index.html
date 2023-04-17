@@ -26,9 +26,7 @@
             Евгений Копиленко
             </h1>
             <p>
-            <i>
-                Программист
-            </i>
+            Программист
             </p>
             <p><img src="img/user-photo.jpg" width="400" height="400" alt="Моя фотография"></p>
         </section>
@@ -41,7 +39,48 @@
             <p>В данный момент я учусь в магистратуре <a href="https://mf.bmstu.ru/">МФ МГТУ им. Н. Э. Баумана</a>
                 по направлению «Информатика и вычисли­тельная техника».</p>          
             <p>В прошлом году защитил диплом бакалавра на тему <a href="http://92.63.192.207/doc/Diploma.pdf">«Разработка модуля установки цифрового водяного знака видеопотока»</a> на отлично.</p>
-            <p>Имею опыт работы C++ разработчиком 1.4 года.</p>
+            <p>Имею опыт работы C++ разработчиком 
+                <script>
+                    let parseYear = (month) => {
+                        let year = (month/12|0)
+                        switch (year) {
+                            case 1:
+                                return year + " год"
+                            case 2:
+                            case 3: 
+                            case 4: 
+                                return year + " года"
+                            default:
+                                return year + " лет"
+                        }
+                        return (month/12|0)
+                    }
+                    let parseMonth = (month) => {
+                        let monthDived = month - 12*(month/12|0)
+                        switch (monthDived) {
+                            case 0:
+                                return ""
+                            case 1: 
+                                return " " + monthDived + " месяц"
+                            case 2:
+                            case 3:
+                            case 4:
+                                return " " + monthDived + " месяца"
+                            default:
+                                return " " + monthDived + " месяцев"
+                        }
+                        return monthDived
+                    }
+                    let jobs = [];
+                    let jobsCount = 2
+                    jobs.push({begin: new Date(2021, 10, 1, 0, 0, 0, 0), end: new Date(2022, 5, 1, 0, 0, 0, 0)})
+                    jobs.push({begin: new Date(2022, 8, 1, 0, 0, 0, 0), end: new Date()})
+                    let intervalMonth = 0
+                    for (let i = 0; i < jobsCount; i++) {
+                        let intervalYear = jobs[i].end.getFullYear() - jobs[i].begin.getFullYear()
+                        intervalMonth += (12*intervalYear) + jobs[i].end.getMonth() - jobs[i].begin.getMonth() + 1
+                    }
+                    document.write(parseYear(intervalMonth) + parseMonth(intervalMonth));</script>.</p>
             <p>В настоящий момент я активно ищу работу на позицию Go разработчика. Рассматриваю варианты как в Москве, так и с релокейтом.</p>
 
         </section>
@@ -52,11 +91,9 @@
             </h2>
             <div>
                 Сортировать
-                <button type="button" onclick="alert('я кнопка')">по названию</button>
-                <button type="button" onclick="alert('я тоже')">по уровню</button>
+                <button type="button">по названию</button>
+                <button type="button">по уровню</button>
             </div>
-            <!-- Не очень понимаю, как оценивать навыки в процентах. Если на позицию джуна я знаю язык хорошо, то для сеньора не очень -->
-            <!-- Сюда бы подошло еще описание, как у описания репозиториев на гитхабе, для описания используемых технологий с языком -->
             <dl>
                 <dt>C++</dt>
                 <dd>
