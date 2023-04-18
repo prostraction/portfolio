@@ -4,6 +4,12 @@
     font-family: "Open Sans", sans-serif;
 }*/
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 :root {
     --black: #212121;
     --green: #09A494;
@@ -40,6 +46,13 @@ h1 {
     line-height: 46px;
     letter-spacing: 0em;
     text-align: left;
+}
+
+.container {
+    min-width: 320px;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 h2 {
