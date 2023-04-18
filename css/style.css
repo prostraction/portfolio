@@ -1,0 +1,88 @@
+/*
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+.opensans {
+    font-family: "Open Sans", sans-serif;
+}*/
+
+:root {
+    --black: #212121;
+    --green: #09A494;
+    --white: #FFFFFF;
+}
+
+body {
+    color: var(--black);
+    font-family: "Open Sans", "Arial", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 150%;
+}
+
+footer {
+    color: var(--white);
+    background-color: var(--black);
+}
+
+h1 {
+    font-family: "Open Sans", "Arial", sans-serif;
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 66px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.subtitle {
+    font-family: "Open Sans", "Arial", sans-serif;
+    font-size: 38px;
+    font-weight: 400;
+    line-height: 46px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+h2 {
+    font-family: "Open Sans", "Arial", sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 36px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+h3 {
+    font-family: "Open Sans", "Arial", sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 29px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+p {
+    font-family: "Open Sans", "Arial", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+button {
+    font-family: "Open Sans", "Arial", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+a {
+    font-family: "Open Sans", "Arial", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0em;
+    text-align: left;
+}
