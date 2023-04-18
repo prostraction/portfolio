@@ -82,13 +82,165 @@ p {
     text-align: left;
 }
 
+.skills-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 20px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.social {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 20px;
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+}
+
+.social li {
+    display: inline-block;
+    margin: 0px;
+    padding: 0px;
+}
+
+.social-link {
+    padding: 10px;
+    gap: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #09A494;
+    border-radius: 50%;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    background-repeat: no-repeat;
+    background-position: left top;
+}
+
+.social-link:hover {
+    background: var(--green);
+}
+
+.social-link_github {
+    width: 30px;
+    height: 30px;
+    background-image: url("../img/contacts/github.svg");
+}
+
+.social-link_telegram {
+    width: 30px;
+    height: 30px;
+    background-image: url("../img/contacts/telegram.svg");
+}
+
+.contact {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 40px;
+    width: 420px;
+    height: 30px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.contact li {
+    display: inline-block;
+    margin: 0px;
+    *padding: 0px;
+}
+
+.contact-link {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 12px;
+
+    width: 203px;
+    height: 30px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.contact-link a {
+    text-decoration: none;
+    color: var(--black);
+    padding: 42px;
+}
+
+.contact-link a:hover {
+    text-decoration: none;
+    color: var(--green);
+}
+
+.contact-link_phone {
+    width: 30px;
+    height: 30px;
+    background-image: url("../img/contacts/github.svg");
+}
+
+.contact-link_mail {
+    width: 30px;
+    height: 30px;
+    background-image: url("../img/contacts/github.svg");
+}
+
 button {
-    font-family: "Open Sans", "Arial", sans-serif;
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 30px;
-    letter-spacing: 0em;
-    text-align: left;
+    padding: 0;
+    border: none;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+    text-transform: lowercase;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 6px 10px 10px;
+    gap: 10px;
+    border: 1px solid var(--green);
+    border-radius: 8px;
+    color: var(--green);
+    background-color: var(--white);
+}
+
+button:hover {
+    color: var(--white);
+    background-color: var(--green);
 }
 
 a {
@@ -98,4 +250,53 @@ a {
     line-height: 30px;
     letter-spacing: 0em;
     text-align: left;
+}
+
+.main-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 60px 0px 0px;
+    gap: 40px;
+    flex: none;
+    flex-grow: 0;
+}
+
+.main-header .main-logo {
+    flex: none;
+    flex-grow: 0;
+}
+
+.main-nav li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 60px 0px 0px;
+    gap: 40px;
+    flex: none;
+}
+
+.main-nav li {
+    display: inline-block;
+}
+
+.main-nav a {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 100%;
+    color: var(--black);
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    flex: none;
+    flex-grow: 0;
+    text-decoration: none;
+    padding: 10px 15px 10px 15px;
+    gap: 10px;
+}
+
+.main-nav a:hover {
+    color: var(--green);
 }

@@ -16,12 +16,14 @@
 <body>
     <div class="container">
         <header class="main-header">
-            <p><img src="img/main-logo.svg" width="60" height="60" alt="Логотип"></p>
-            <nav>
-                <a href="#about">Обо мне</a>
-                <a href="#skills">Навыки</a>
-                <a href="#hobby">Интересы</a>
-                <a href="#contacts">Контакты</a>
+            <img src="img/main-logo.svg" class="main-logo" width="60" height="60" alt="Логотип">
+            <nav class="main-nav">
+                <ul>
+                <li><a href="#about">Обо мне</a></li>
+                <li><a href="#skills">Навыки</a></li>
+                <li><a href="#hobby">Интересы</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+                </ul>
             </nav>
         </header>
         <main>
@@ -29,7 +31,7 @@
                 <h1>
                     Евгений Копиленко
                 </h1>
-                <p>
+                <p class="container">
                     Программист
                 </p>
                 <p><img src="img/user-photo.jpg" width="400" height="400" alt="Моя фотография"></p>
@@ -56,7 +58,7 @@
                 <h2>
                     Мои навыки
                 </h2>
-                <div>
+                <div class="skills-buttons">
                     Сортировать
                     <button type="button">по названию</button>
                     <button type="button">по уровню</button>
@@ -102,11 +104,27 @@
 
             <section id="contacts" class="contacts">
                 <h2>Мои контакты</h2>
-                <p><a href="tel:+79950995473">+7(995)099-54-73</a></p>
-                <p><a href="mailto:kopilenko.ea@gmail.com">kopilenko.ea@gmail.com</a></p>
-                <ul>
-                    <li><a href="https://github.com/prostraction">Github</a></li>
-                    <li><a href="https://t.me/procra">Telegram</a></li>
+                <p><ul class="contact">
+                    <li class="contact-link"><p><div class="contact-link_phone"><a href="tel:+79950995473">+7(995)099-54-73</a></div></p></li>
+                    <li class="contact-link"><p><div class="contact-link_phone"><a href="tel:+79950995473">+7(995)099-54-73</a></div></p></li>
+                    <!-- <li class="contact-link"><a href="mailto:kopilenko.ea@gmail.com">kopilenko.ea@gmail.com</a></li> -->
+                </ul>
+            </p>
+                <ul class="social">
+                    <li class="social-link">
+                        <a href="https://github.com/prostraction">
+                            <div class="social-link_github">
+                                 <span class="visually-hidden">Github</span>
+                             </div>
+                        </a>
+                    </li>
+                    <li class="social-link">
+                        <a href="https://t.me/procra">
+                            <div class="social-link_telegram">
+                                <span class="visually-hidden">Telegram</span>
+                            </div>
+                        </a>
+                    </li>
                 </ul>
             </section>
         </main>
