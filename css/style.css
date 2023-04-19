@@ -46,6 +46,7 @@ h1 {
     line-height: 46px;
     letter-spacing: 0em;
     text-align: left;
+    color: var(--green);
 }
 
 .container {
@@ -199,12 +200,12 @@ p {
 }
 
 .contact-link_phone {
-    padding: 0px 0px 0px 42px;
+    padding: 5px 0px 5px 42px;
     background-image: url("../img/contacts/phone.svg");
 }
 
 .contact-link_email {
-    padding: 0px 0px 0px 42px;
+    padding: 5px 0px 5px 42px;
     background-image: url("../img/contacts/email.svg");
 }
 
@@ -260,7 +261,7 @@ a {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 60px 0px 0px;
+    padding: 0px 60px 0px 0px;
     gap: 40px;
     flex: none;
 }
@@ -288,4 +289,65 @@ a {
 
 .main-nav a:hover {
     color: var(--green);
+}
+
+.main-photo {
+    border-radius: 50%;
+}
+
+
+.skill-list {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+}
+
+
+.skill-list dt {
+    margin-bottom: 6px;
+    padding: 5px 0 5px 38px;
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: 30px;
+}
+
+
+.skill-level {
+    margin: 4px 0 16px;
+    padding: 2px;
+    font-size: 0;
+    border: 1px solid var(--black);
+    border-radius: 16px;
+}
+
+
+.skill-level div {
+    height: 14px;
+    background-color: var(--green);
+    border-radius: 8px;
+}
+
+
+.skill-item {
+    text-transform: lowercase;
+}
+
+.skill-item_cpp {
+    background-image: url("../img/skills/c++.svg");
+}
+
+.skill-item_golang {
+    background-image: url("../img/skills/golang.svg");
+}
+
+.skill-item_js {
+    background-image: url("../img/skills/javascript.svg");
+}
+
+.skill-item_html {
+    background-image: url("../img/skills/html.svg");
+}
+
+.skill-item_css {
+    background-image: url("../img/skills/css.svg");
 }

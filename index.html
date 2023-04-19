@@ -19,10 +19,10 @@
             <img src="img/main-logo.svg" class="main-logo" width="60" height="60" alt="Логотип">
             <nav class="main-nav">
                 <ul>
-                <li><a href="#about">Обо мне</a></li>
-                <li><a href="#skills">Навыки</a></li>
-                <li><a href="#hobby">Интересы</a></li>
-                <li><a href="#contacts">Контакты</a></li>
+                    <li><a href="#about">Обо мне</a></li>
+                    <li><a href="#skills">Навыки</a></li>
+                    <li><a href="#hobby">Интересы</a></li>
+                    <li><a href="#contacts">Контакты</a></li>
                 </ul>
             </nav>
         </header>
@@ -31,10 +31,10 @@
                 <h1>
                     Евгений Копиленко
                 </h1>
-                <p class="container">
+                <p class="subtitle">
                     Программист
                 </p>
-                <p><img src="img/user-photo.jpg" width="400" height="400" alt="Моя фотография"></p>
+                <p><img src="img/user-photo.jpg" width="400" height="400" alt="Моя фотография" class="main-photo"></p>
             </section>
 
             <section id="about" class="about">
@@ -47,8 +47,9 @@
                 <p>В прошлом году защитил диплом бакалавра на тему <a
                         href="http://92.63.192.207/doc/Diploma.pdf">«Разработка модуля установки цифрового водяного
                         знака видеопотока»</a> на отлично.</p>
-                <p>Имею опыт работы C++ разработчиком 1.4 года. </p>
-                <!-- <script src="js/jobsTime.js"></script> .</p>-->
+                <p>Имею опыт работы C++ разработчиком
+                    <script src="js/jobsTime.js"></script>.
+                </p>
                 <p>В настоящий момент я активно ищу работу на позицию Go разработчика. Рассматриваю варианты как в
                     Москве, так и с релокейтом.</p>
 
@@ -63,34 +64,36 @@
                     <button type="button">по названию</button>
                     <button type="button">по уровню</button>
                 </div>
-                <dl>
-                    <dt>C++</dt>
-                    <dd>
+                <p></p>
+                <dl class="skill-list">
+                    <dt class="skill-item_cpp">C++</dt>
+                    <dd class="skill-level">
                         <div style="width: 100%;">100</div>
                     </dd>
                 </dl>
-                <dl>
-                    <dt>Go</dt>
-                    <dd>
+                <dl class="skill-list">
+                    <dt class="skill-item_golang">Go</dt>
+                    <dd class="skill-level">
                         <div style="width: 80%;">80</div>
                     </dd>
                 </dl>
-                <dl>
-                    <dt>JS</dt>
-                    <dd>
-                        <div style="width: 50%;">NaN</div>
+                <dl class="skill-list">
+                    <dt class="skill-item_js">JS</dt>
+                    <dd class="skill-level">
+                        <div style="width: 50%;">50</div>
                     </dd>
                 </dl>
-                <dl>
-                    <dt>HTML</dt>
-                    <dd>
+                <dl class="skill-list">
+                    <dt class="skill-item_html">HTML</dt>
+                    <dd class="skill-level">
                         <div style="width: 100%;">100</div>
                     </dd>
                 </dl>
-                <dl>
-                    <dt>CSS</dt>
-                    <dd>
-                        <div style="width: 20%;">20</div>
+                <dl class="skill-list">
+                    <dt class="skill-item_css">CSS</dt>
+                    <dd class="skill-level">
+                        <!-- Пасхалка понравилась) -->
+                        <div style="width: 120%;">120</div>
                     </dd>
                 </dl>
             </section>
@@ -104,20 +107,22 @@
 
             <section id="contacts" class="contacts">
                 <h2>Мои контакты</h2>
-                <p><ul class="contact">
+                <p>
+                <ul class="contact">
                     <li><a href="tel:+79950995473" class="contact-link contact-link_phone">+7(995)099-54-73</a></li>
-                    <li><a href="mailto:kopilenko.ea@gmail.com" class="contact-link contact-link_email">kopilenko.ea@gmail.com</a></li>
+                    <li><a href="mailto:kopilenko.ea@gmail.com"
+                            class="contact-link contact-link_email">kopilenko.ea@gmail.com</a></li>
                 </ul>
                 </p>
                 <ul class="social">
                     <li>
                         <a href="https://github.com/prostraction" class="social-link social-link_github">
-                                <span class="visually-hidden">Github</span>
+                            <span class="visually-hidden">Github</span>
                         </a>
                     </li>
                     <li>
                         <a href="https://t.me/procra" class="social-link social-link_telegram">
-                                <span class="visually-hidden">Telegram</span>
+                            <span class="visually-hidden">Telegram</span>
                         </a>
                     </li>
                 </ul>
@@ -132,4 +137,5 @@
         </div>
     </footer>
 </body>
+
 </html>
