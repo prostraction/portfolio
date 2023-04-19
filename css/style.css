@@ -131,6 +131,7 @@ p {
     gap: 10px;
     box-sizing: border-box;
     display: flex;
+    flex-shrink: 0;
     flex-direction: row;
     align-items: flex-start;
     width: 50px;
@@ -149,12 +150,14 @@ p {
 }
 
 .social-link_github {
+    flex-shrink: 0;
     width: 30px;
     height: 30px;
     background-image: url("../img/contacts/github.svg");
 }
 
 .social-link_telegram {
+    flex-shrink: 0;
     width: 30px;
     height: 30px;
     background-image: url("../img/contacts/telegram.svg");
@@ -166,8 +169,6 @@ p {
     align-items: flex-start;
     padding: 0px;
     gap: 40px;
-    width: 420px;
-    height: 30px;
     flex: none;
     order: 1;
     flex-grow: 0;
@@ -176,7 +177,7 @@ p {
 .contact li {
     display: inline-block;
     margin: 0px;
-    *padding: 0px;
+    padding: 0px;
 }
 
 .contact-link {
@@ -189,20 +190,17 @@ p {
     padding: 0px;
     gap: 12px;
 
-    width: 203px;
-    height: 30px;
     flex: none;
     order: 0;
     flex-grow: 0;
 }
 
-.contact-link a {
+.contact-link {
     text-decoration: none;
     color: var(--black);
-    padding: 42px;
 }
 
-.contact-link a:hover {
+.contact-link:hover {
     text-decoration: none;
     color: var(--green);
 }
@@ -210,13 +208,13 @@ p {
 .contact-link_phone {
     width: 30px;
     height: 30px;
-    background-image: url("../img/contacts/github.svg");
+    background-image: url("../img/contacts/phone.svg");
 }
 
-.contact-link_mail {
+.contact-link_email {
     width: 30px;
     height: 30px;
-    background-image: url("../img/contacts/github.svg");
+    background-image: url("../img/contacts/email.svg");
 }
 
 button {
