@@ -142,24 +142,18 @@ p {
     order: 0;
     flex-grow: 0;
     background-repeat: no-repeat;
-    background-position: left top;
+    background-position: center;
 }
 
 .social-link:hover {
-    background: var(--green);
+    background-color: var(--green);
 }
 
 .social-link_github {
-    flex-shrink: 0;
-    width: 30px;
-    height: 30px;
     background-image: url("../img/contacts/github.svg");
 }
 
 .social-link_telegram {
-    flex-shrink: 0;
-    width: 30px;
-    height: 30px;
     background-image: url("../img/contacts/telegram.svg");
 }
 
@@ -184,6 +178,8 @@ p {
     display: inline-block;
     margin: 0;
     padding: 0;
+    text-decoration: none;
+    color: var(--black);
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -193,11 +189,8 @@ p {
     flex: none;
     order: 0;
     flex-grow: 0;
-}
-
-.contact-link {
-    text-decoration: none;
-    color: var(--black);
+    background-repeat: no-repeat;
+    background-position: left;
 }
 
 .contact-link:hover {
@@ -206,14 +199,12 @@ p {
 }
 
 .contact-link_phone {
-    width: 30px;
-    height: 30px;
+    padding: 0px 0px 0px 42px;
     background-image: url("../img/contacts/phone.svg");
 }
 
 .contact-link_email {
-    width: 30px;
-    height: 30px;
+    padding: 0px 0px 0px 42px;
     background-image: url("../img/contacts/email.svg");
 }
 
