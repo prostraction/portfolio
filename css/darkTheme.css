@@ -1,0 +1,29 @@
+.dark-theme-body {
+    color: var(--white);
+    background-color: var(--black);
+}
+
+.dark-theme-body .main-footer{
+    color: var(--black);
+    background-color: var(--green);
+}
+
+.dark-theme-nav-a {
+    color: var(--white) !important;
+}
+.dark-theme-nav-a:hover {
+    color: var(--green) !important;
+}
+
+.dark-theme-contact-link{
+    filter: invert(100%);
+}
+
+.dark-theme-contact-link:hover {
+    text-decoration: none;
+    color: #f65b6b;
+}
+
+.dark-theme-skill-level {
+    border: 1px solid var(--white);
+}
