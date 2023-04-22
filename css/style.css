@@ -31,21 +31,15 @@ footer {
 }
 
 h1 {
-    font-family: "Open Sans", "Arial", sans-serif;
     font-size: 60px;
     font-weight: 700;
-    line-height: 66px;
-    letter-spacing: 0em;
-    text-align: left;
+    line-height: 1em;
 }
 
 .subtitle {
-    font-family: "Open Sans", "Arial", sans-serif;
     font-size: 38px;
     font-weight: 400;
-    line-height: 46px;
-    letter-spacing: 0em;
-    text-align: left;
+    line-height: 1.43em;
     color: var(--green);
 }
 
@@ -57,62 +51,43 @@ h1 {
 }
 
 h2 {
-    font-family: "Open Sans", "Arial", sans-serif;
     font-size: 30px;
     font-weight: 700;
-    line-height: 36px;
-    letter-spacing: 0em;
-    text-align: left;
+    line-height: 1.83em;
 }
 
 h3 {
-    font-family: "Open Sans", "Arial", sans-serif;
     font-size: 24px;
     font-weight: 700;
-    line-height: 29px;
-    letter-spacing: 0em;
-    text-align: left;
+    line-height: 2.27em;
 }
 
 p {
-    font-family: "Open Sans", "Arial", sans-serif;
     font-size: 20px;
     font-weight: 400;
-    line-height: 30px;
-    letter-spacing: 0em;
-    text-align: left;
+    line-height: 2.2em;
 }
 
 a {
-    font-family: "Open Sans", "Arial", sans-serif;
     font-size: 20px;
     font-weight: 400;
-    line-height: 30px;
-    letter-spacing: 0em;
-    text-align: left;
+    line-height: 2.2em;
+    color: var(--green);
+}
+a:hover {
+    text-decoration: none;
+}
+
+.info {
+
 }
 
 .main-header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
     padding: 60px 0px 0px;
-    gap: 40px;
-    flex: none;
-    flex-grow: 0;
 }
 
 .main-header .main-logo {
-    flex: none;
-    flex-grow: 0;
-}
 
-.main-nav li {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 40px;
-    flex: none;
 }
 
 .main-nav li {
@@ -120,20 +95,12 @@ a {
 }
 
 .main-nav a {
-    font-family: 'Open Sans';
-    font-style: normal;
     font-weight: 400;
     font-size: 20px;
     line-height: 100%;
     color: var(--black);
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    flex: none;
-    flex-grow: 0;
     text-decoration: none;
     padding: 10px 15px 10px 15px;
-    gap: 10px;
 }
 
 .main-nav a:hover {
@@ -145,33 +112,19 @@ a {
 }
 
 .skills-buttons {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
     padding: 0px;
-    gap: 20px;
-    flex: none;
-    order: 1;
-    flex-grow: 0;
 }
 
 button {
-    padding: 0;
     border: none;
-    color: inherit;
-    background-color: transparent;
     cursor: pointer;
     text-transform: lowercase;
     box-sizing: border-box;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
     padding: 6px 10px 10px;
-    gap: 10px;
     border: 1px solid var(--green);
     border-radius: 8px;
     color: var(--green);
-    background-color: var(--white);
+    background-color: transparent;
 }
 
 button:hover {
@@ -196,14 +149,6 @@ button:hover {
     margin: 0;
     padding: 0;
     list-style-type: none;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 0px;
-    gap: 20px;
-    flex: none;
-    order: 2;
-    flex-grow: 0;
 }
 
 .social li {
@@ -213,20 +158,13 @@ button:hover {
 }
 
 .social-link {
+    display: flex; /* Иначе иконки ломаются */
     padding: 10px;
-    gap: 10px;
-    box-sizing: border-box;
-    display: flex;
-    flex-shrink: 0;
-    flex-direction: row;
-    align-items: flex-start;
     width: 50px;
     height: 50px;
     border: 1px solid #09A494;
     border-radius: 50%;
-    flex: none;
-    order: 0;
-    flex-grow: 0;
+    background-color: var(--white);
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -244,14 +182,7 @@ button:hover {
 }
 
 .contact {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 0px;
-    gap: 40px;
-    flex: none;
-    order: 1;
-    flex-grow: 0;
+
 }
 
 .contact li {
@@ -263,18 +194,9 @@ button:hover {
 .contact-link {
     display: inline-block;
     margin: 0;
-    padding: 0;
     text-decoration: none;
     color: var(--black);
-    display: flex;
-    flex-direction: row;
-    align-items: center;
     padding: 0px;
-    gap: 12px;
-
-    flex: none;
-    order: 0;
-    flex-grow: 0;
     background-repeat: no-repeat;
     background-position: left;
 }
@@ -291,7 +213,7 @@ button:hover {
 
 .contact-link_email {
     padding: 5px 0px 5px 42px;
-    background-image: url("../img/contacts/email.svg");
+    background-image: url("../img/contacts/email.svg");    
 }
 
 .skill-list {
@@ -299,7 +221,6 @@ button:hover {
     padding: 0;
     line-height: 1;
 }
-
 
 .skill-list dt {
     margin-bottom: 6px;
@@ -316,13 +237,11 @@ button:hover {
     border-radius: 16px;
 }
 
-
 .skill-level div {
     height: 14px;
     background-color: var(--green);
     border-radius: 8px;
 }
-
 
 .skill-item {
     text-transform: lowercase;
@@ -346,4 +265,35 @@ button:hover {
 
 .skill-item_css {
     background-image: url("../img/skills/css.svg");
+}
+
+/* Это случайный код, его здесь не должно быть */
+.dark-theme-body {
+    color: var(--white);
+    background-color: var(--black);
+}
+
+.dark-theme-body .main-footer{
+    color: var(--black);
+    background-color: var(--green);
+}
+
+.dark-theme-nav-a {
+    color: var(--white) !important;
+}
+.dark-theme-nav-a:hover {
+    color: var(--green) !important;
+}
+
+.dark-theme-contact-link{
+    filter: invert(100%);
+}
+
+.dark-theme-contact-link:hover {
+    text-decoration: none;
+    color: #f65b6b;
+}
+
+.dark-theme-skill-level {
+    border: 1px solid var(--white);
 }
