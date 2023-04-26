@@ -114,6 +114,11 @@ p {
     margin-top: 0px;
     margin-bottom: 15px;
 }
+
+.text-wrapper {
+    max-width: 800px;
+}
+
 .text-wrapper p {
     margin-bottom: 0px;
 }
@@ -146,10 +151,6 @@ a:hover {
 
 .main-nav li {
     display: inline-block;
-}
-
-.text-wrapper {
-    max-width: 800px;
 }
 
 .info {
@@ -242,6 +243,7 @@ button:hover {
 
 .social-link {
     display: block;
+    /*gap: 10px; figma layout, but works same without it*/
     padding: 10px;
     width: 50px;
     height: 50px;
@@ -313,7 +315,7 @@ button:hover {
 }
 
 .skill-list dt {
-    margin-bottom: 6px;
+    margin-bottom: 4px; /* 5px better match figma design */
     padding: 5px 0 5px 38px;
     background-position: left;
     background-repeat: no-repeat;
