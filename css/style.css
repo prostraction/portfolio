@@ -52,14 +52,27 @@ body {
 }
 
 footer {
+    margin: 0;
     color: var(--white);
     background-color: var(--black);
+    
+}
+
+.main-footer .container {
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 h1 {
     font-size: 60px;
     font-weight: 700;
     line-height: 1.1;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.contacts, .hobby, .skills, .about {
+    margin-bottom: 120px;
 }
 
 .subtitle {
@@ -80,6 +93,8 @@ h2 {
     font-size: 30px;
     font-weight: 700;
     line-height: 1.2;
+    margin: 0;
+    margin-bottom: 40px;
 }
 
 h3 {
@@ -94,19 +109,57 @@ a {
     line-height: 1;
     color: var(--green);
 }
+
+p {
+    margin-top: 0px;
+    margin-bottom: 15px;
+}
+p:last-child {
+    margin-bottom: 0px;
+}
+
 a:hover {
     text-decoration: none;
 }
 
+.nav {
+    display: flex;
+}
+
+.main-header p {
+    margin: 0;
+}
 .main-header {
+    display: flex;
+    flex-direction: row;
     padding: 60px 0px 0px;
+    align-items: center;
+    margin-bottom: 120px;
+}
+
+.main-nav ul {
+    margin: 0;
 }
 
 .main-nav li {
     display: inline-block;
 }
 
+.text-wrapper {
+    max-width: 800px;
+}
+
+.info {
+    display: flex;
+    gap: 70px;
+    justify-content:space-between;
+    align-items: center;
+    margin: 0px;
+    margin-bottom: 120px;
+}
+
 .main-nav a {
+    display: inline-block;
     font-weight: 400;
     font-size: 20px;
     line-height: 100%;
@@ -114,6 +167,7 @@ a:hover {
     text-decoration: none;
     padding: 10px 15px 10px 15px;
     line-height: 1;
+    text-align: center;
 }
 
 .main-nav a:hover {
@@ -158,19 +212,29 @@ button:hover {
 }
 
 .social {
+    display: flex;
     margin: 0;
     padding: 0;
+    gap: 20px;
     list-style-type: none;
 }
 
-.skills-buttons, .contact  {
-    padding: 0;
+.skills-buttons h2 {
+    margin: 0;
 }
 
-.social li, .contact li {
-    display: inline-block;
-    margin: 0;
+.skills-buttons {
+    display: flex;
     padding: 0;
+    align-items: top;
+    justify-content: space-between;
+    margin: 0;
+    margin-bottom: 40px;
+}
+.skills-buttons div {
+    display: flex;
+    gap: 20px;
+    align-items: center;
 }
 
 .social-link {
@@ -197,6 +261,21 @@ button:hover {
 .social-link_telegram {
     background-image: url("../img/contacts/telegram.svg");
 }
+
+.contact {
+    display: flex;
+    gap: 40px;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 40px;
+}
+
+.social li, .contact li {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
 
 .contact-link {
     display: inline-block;
@@ -238,7 +317,7 @@ button:hover {
     background-size: 30px;
 }
 .skill-level {
-    margin: 4px 0 16px;
+    margin: 4px 0 20px;
     padding: 2px;
     font-size: 0;
     border: 1px solid var(--black);
