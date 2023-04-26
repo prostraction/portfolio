@@ -114,8 +114,11 @@ p {
     margin-top: 0px;
     margin-bottom: 15px;
 }
-p:last-child {
+.text-wrapper p {
     margin-bottom: 0px;
+}
+.text-wrapper p+p {
+    margin-top: 15px;
 }
 
 a:hover {
