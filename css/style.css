@@ -110,16 +110,12 @@ a {
     color: var(--green);
 }
 
-p {
-    margin-top: 0px;
-    margin-bottom: 15px;
-}
-
 .text-wrapper {
     max-width: 800px;
 }
 
 .text-wrapper p {
+    margin-top: 0px;
     margin-bottom: 0px;
 }
 .text-wrapper p+p {
@@ -164,13 +160,9 @@ a:hover {
 
 .main-nav a {
     display: inline-block;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 100%;
     color: var(--black);
     text-decoration: none;
     padding: 10px 15px 10px 15px;
-    line-height: 1;
     text-align: center;
 }
 
@@ -230,7 +222,7 @@ button:hover {
 .skills-buttons {
     display: flex;
     padding: 0;
-    align-items: top;
+    align-items: flex-start;
     justify-content: space-between;
     margin: 0;
     margin-bottom: 40px;
