@@ -110,14 +110,15 @@ a {
     color: var(--green);
 }
 
+p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
 .text-wrapper {
     max-width: 800px;
 }
 
-.text-wrapper p {
-    margin-top: 0px;
-    margin-bottom: 0px;
-}
 .text-wrapper p+p {
     margin-top: 15px;
 }
