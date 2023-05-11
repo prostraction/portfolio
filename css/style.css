@@ -71,7 +71,7 @@ h1 {
     margin-bottom: 20px;
 }
 
-.contacts, .hobby, .skills, .about {
+.contacts, .hobby, .skills, .about, .info, .main-header  {
     margin-bottom: 120px;
 }
 
@@ -139,10 +139,14 @@ a:hover {
     flex-direction: row;
     padding: 60px 0px 0px;
     align-items: center;
-    margin-bottom: 120px;
+}
+
+.nav-btn {
+    display: none;
 }
 
 .main-nav ul {
+    display: flex;
     margin: 0;
 }
 
@@ -153,10 +157,9 @@ a:hover {
 .info {
     display: flex;
     gap: 70px;
-    justify-content:space-between;
+    justify-content: space-between;
     align-items: center;
     margin: 0px;
-    margin-bottom: 120px;
 }
 
 .main-nav a {
@@ -189,7 +192,7 @@ button {
     background-color: transparent;
 }
 
-button:hover {
+button:not(.nav-btn_close):not(.nav-btn_open):hover {
     color: var(--white);
     background-color: var(--green);
     transition: 300ms;
@@ -210,6 +213,7 @@ button:hover {
 
 .social {
     display: flex;
+    flex-wrap: wrap;
     margin: 0;
     padding: 0;
     gap: 20px;
@@ -223,8 +227,9 @@ button:hover {
 .skills-buttons {
     display: flex;
     padding: 0;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
     margin: 0;
     margin-bottom: 40px;
 }
@@ -232,11 +237,11 @@ button:hover {
     display: flex;
     gap: 20px;
     align-items: center;
+    
 }
 
 .social-link {
-    display: block;
-    /*gap: 10px; figma layout, but works same without it*/
+    display: flex;
     padding: 10px;
     width: 50px;
     height: 50px;
@@ -262,6 +267,7 @@ button:hover {
 
 .contact {
     display: flex;
+    flex-wrap: wrap;
     gap: 40px;
     padding: 0;
     margin: 0;
@@ -276,7 +282,8 @@ button:hover {
 
 
 .contact-link {
-    display: inline-block;
+    display: flex;
+    flex-wrap: wrap;
     margin: 0;
     text-decoration: none;
     color: var(--black);
@@ -308,7 +315,7 @@ button:hover {
 }
 
 .skill-list dt {
-    margin-bottom: 4px; /* 5px better match figma design */
+    margin-bottom: 4px; /* 4px better match figma design */
     padding: 5px 0 5px 38px;
     background-position: left;
     background-repeat: no-repeat;
@@ -350,4 +357,168 @@ button:hover {
 
 .skill-item_css {
     background-image: url("../img/skills/css.svg");
+}
+
+/* Tablet Landscape */
+@media screen and (max-width: 1024px) {  
+    h1 {
+        font-size: 50px;
+    }
+    h2 {
+        font-size: 24px; 
+    }
+    .subtitle {
+        font-size: 28px;
+    }
+    body {
+        font-size: 16px;
+    }
+    a {
+        font-size: 16px;
+    }
+    .main-photo {
+        max-width: 250px;
+        max-height: 250px;
+    }
+    .contacts, .hobby, .skills, .about, .info, .main-header {
+        margin-bottom: 80px;
+    }
+    
+
+
+}
+
+/* Tablet Portrait */
+@media screen and (max-width: 768px) {
+    /*
+
+    ¯\_(ツ)_/¯ 
+
+    */
+}
+
+/* Mobile Landscape */
+@media screen and (max-width: 650px) {
+    h1 {
+        font-size: 32px;
+        margin: 0;
+    }
+    h2 {
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+    .subtitle {
+        margin-top: 10px;
+        font-size: 20px;
+    }
+    body {
+        font-size: 14px;
+    }
+    a {
+        font-size: 14px;
+    }
+    
+    .nav-btn {
+        display: block;
+        width: 30px;
+        height: 30px;
+    }
+    .main-header-wrap {
+        width: 100%;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .main-photo {
+        max-width: 150px;
+        max-height: 150px;
+    }
+    .nav-btn_close {
+        background-image: url(../img/close.svg);
+        border: 0;
+    }
+
+    .nav-btn_open {
+        background-image: url(../img/burger.svg);
+        border: 0;
+    }
+    
+    .main-logo {
+        width: 40px;
+        height: 40px;
+    }
+    .main-header {
+        flex-direction: column;
+    }
+    .main-nav ul {
+        margin: 0;
+        padding: 0;
+        flex-direction: column;
+        text-align: center;
+    }
+    .main-nav a {
+        padding: 20px 30px;
+        flex-direction: column;  
+    }
+    
+    .info {
+        flex-direction: column-reverse;
+        gap: 0px;
+    }
+    .skills-buttons {
+        margin-bottom: 30px;
+    }
+    
+    .info .text-wrapper {
+        margin-top: 30px;
+        text-align: center;
+    }
+    
+    .contact-link_phone, .contact-link_email {
+        padding: 8px 0px 8px 42px;
+    }
+
+    .main-footer .container {
+        padding: 30px 0px 30px 20px;
+    }
+
+    .contacts, .hobby, .skills, .about, .info, .main-header {
+        margin-bottom: 60px;
+    }
+}
+
+/* Mobile Portrait */
+@media screen and (max-width: 360px) {
+    .contact {
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+    .contacts, .hobby, .skills, .about, .info, .main-header {
+        margin-bottom: 50px;
+    }
+}
+
+/* Навыки отдельно */
+@media screen and (max-width: 380px) {
+    .skills-buttons h2 {
+        margin-bottom: 20px;
+    }
+    .skills-buttons {
+        width: 100%;
+        text-align: left;
+        align-items: start;
+        flex-direction: column; 
+    }
+    .skills-buttons div {
+        width: 100%;
+        flex-direction: column;
+        text-align: left;
+        align-items: start;
+        gap: 10px;
+    }
+    .skills-buttons div button {
+        width: 100%;
+    }
 }
