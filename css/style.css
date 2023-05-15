@@ -160,6 +160,7 @@ a:hover {
     justify-content: space-between;
     align-items: center;
     margin: 0px;
+    margin-bottom: 120px;
 }
 
 .main-nav a {
@@ -192,10 +193,14 @@ button {
     background-color: transparent;
 }
 
-button:not(.nav-btn_close):not(.nav-btn_open):hover {
+button:hover {
     color: var(--white);
     background-color: var(--green);
     transition: 300ms;
+}
+
+.nav-btn:hover {
+    background-color: transparent;
 }
 
 .visually-hidden {
@@ -222,6 +227,7 @@ button:not(.nav-btn_close):not(.nav-btn_open):hover {
 
 .skills-buttons h2 {
     margin: 0;
+    
 }
 
 .skills-buttons {
@@ -230,11 +236,13 @@ button:not(.nav-btn_close):not(.nav-btn_open):hover {
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+    gap: 20px;
     margin: 0;
     margin-bottom: 40px;
 }
 .skills-buttons div {
     display: flex;
+    gap: 1px;
     gap: 20px;
     align-items: center;
     
@@ -383,18 +391,6 @@ button:not(.nav-btn_close):not(.nav-btn_open):hover {
     .contacts, .hobby, .skills, .about, .info, .main-header {
         margin-bottom: 80px;
     }
-    
-
-
-}
-
-/* Tablet Portrait */
-@media screen and (max-width: 768px) {
-    /*
-
-    ¯\_(ツ)_/¯ 
-
-    */
 }
 
 /* Mobile Landscape */
@@ -423,8 +419,12 @@ button:not(.nav-btn_close):not(.nav-btn_open):hover {
         width: 30px;
         height: 30px;
     }
+    .main-header {
+        padding-top: 20px;
+    }
     .main-header-wrap {
         width: 100%;
+        line-height: 0;
         margin-bottom: 20px;
         display: flex;
         align-items: center;
@@ -442,6 +442,10 @@ button:not(.nav-btn_close):not(.nav-btn_open):hover {
     .nav-btn_open {
         background-image: url(../img/burger.svg);
         border: 0;
+    }
+    
+    .contact {
+        margin-bottom: 30px;
     }
     
     .main-logo {
@@ -502,9 +506,6 @@ button:not(.nav-btn_close):not(.nav-btn_open):hover {
 
 /* Навыки отдельно */
 @media screen and (max-width: 380px) {
-    .skills-buttons h2 {
-        margin-bottom: 20px;
-    }
     .skills-buttons {
         width: 100%;
         text-align: left;
