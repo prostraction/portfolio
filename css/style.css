@@ -140,6 +140,9 @@ a:hover {
     padding: 60px 0px 0px;
     align-items: center;
 }
+.main-header-wrap {
+    line-height: 0;
+}
 
 .nav-btn {
     display: none;
@@ -242,7 +245,6 @@ button:hover {
 }
 .skills-buttons div {
     display: flex;
-    gap: 1px;
     gap: 20px;
     align-items: center;
     
@@ -424,7 +426,6 @@ button:hover {
     }
     .main-header-wrap {
         width: 100%;
-        line-height: 0;
         margin-bottom: 20px;
         display: flex;
         align-items: center;
@@ -494,6 +495,9 @@ button:hover {
 
 /* Mobile Portrait */
 @media screen and (max-width: 360px) {
+    .social {
+        gap: 15px;   
+    }
     .contact {
         flex-direction: column;
         gap: 15px;
