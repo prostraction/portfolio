@@ -61,7 +61,12 @@ footer {
     margin: 0;
     color: var(--white);
     background-color: var(--black);
-    
+}
+
+.dark-theme footer {
+    border-top: var(--green) 1px solid;
+    color: var(--black);
+    background-color: var(--white);
 }
 
 .main-footer .container {
