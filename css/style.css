@@ -349,26 +349,6 @@ button:hover {
     text-transform: lowercase;
 }
 
-.skill-item_cpp {
-    background-image: url("../img/skills/c++.svg");
-}
-
-.skill-item_golang {
-    background-image: url("../img/skills/golang.svg");
-}
-
-.skill-item_js {
-    background-image: url("../img/skills/javascript.svg");
-}
-
-.skill-item_html {
-    background-image: url("../img/skills/html.svg");
-}
-
-.skill-item_css {
-    background-image: url("../img/skills/css.svg");
-}
-
 /* Tablet Landscape */
 @media screen and (max-width: 1024px) {  
     h1 {
