@@ -24,8 +24,8 @@ const skills = {
         level: 40,
         iconPath: "img/skills/css.svg",
     }],
-    generateList: (parentElement) => {
-        skills.data.forEach(function(element) {
+    generateList: function(parentElement) {
+        this.data.forEach(element => {
             const dt = document.createElement('dt');
             dt.classList.add('skill-item');
             dt.textContent = element.item;
