@@ -24,8 +24,8 @@ const skills = {
         level: 40,
         iconPath: "img/skills/css.svg",
     }],
-    generateList: function(parentElement) {
-        this.data.forEach(function(element) {
+    generateList: (parentElement) => {
+        skills.data.forEach(function(element) {
             const dt = document.createElement('dt');
             dt.classList.add('skill-item');
             dt.textContent = element.item;
@@ -38,9 +38,8 @@ const skills = {
             div.style.width = `${element.level}%`;
             div.textContent = `${element.level}%`;
 
-            dd.appendChild(div);
-            parentElement.appendChild(dt);
-            parentElement.appendChild(dd);
+            dd.append(div);
+            parentElement.append(dt, dd);
         });
     }
 };
