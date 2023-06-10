@@ -424,6 +424,9 @@ button:hover {
         width: 30px;
         height: 30px;
     }
+    .main-nav_closed {
+        display: none;
+    }
     .main-header {
         padding-top: 20px;
     }
