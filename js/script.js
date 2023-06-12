@@ -61,36 +61,33 @@ const skills = {
             this.data.reverse();
             console.log('инвертирован порядок сортировки');
         }
-        this.generateList(document.querySelector('dl.skill-list'));
+        this.generateList(skillListSelector);
     },
 };
+
+const skillListSelector = document.querySelector('dl.skill-list');
 
 // Меню навигации: .main-header
 const menu = {
-    nav: document.querySelector('.main-nav'),
-    btn: document.querySelector('.nav-btn'),
     open: function() {
-        this.nav.classList.remove('main-nav_closed');
-        this.btn.classList.add('nav-btn_close');
-        this.btn.classList.remove('nav-btn_open');
-        this.btn.setAttribute('alt', 'Закрыть меню в мобильной версии');
-        this.btn.innerHTML = '<span class="visually-hidden">Закрыть меню</span>';
+        nav.classList.remove('main-nav_closed');
+        btn.classList.add('nav-btn_close');
+        btn.classList.remove('nav-btn_open');
+        btn.innerHTML = '<span class="visually-hidden">Закрыть меню</span>';
     },
     close: function() {
-        this.nav.classList.add('main-nav_closed');
-        this.btn.classList.remove('nav-btn_close');
-        this.btn.classList.add('nav-btn_open');
-        this.btn.setAttribute('alt', 'Открыть меню в мобильной версии');
-        this.btn.innerHTML = '<span class="visually-hidden">Открыть меню</span>';
+        nav.classList.add('main-nav_closed');
+        btn.classList.remove('nav-btn_close');
+        btn.classList.add('nav-btn_open');
+        btn.innerHTML = '<span class="visually-hidden">Открыть меню</span>';
     },
-    
 };
 
 // Первое создание списка навыков
-skills.generateList(document.querySelector('dl.skill-list'));
+skills.generateList(skillListSelector);
 
 // Сортировки списка по кнопкам
-const sortBtnsBlock = document.querySelector('.skills-buttons');
+const sortBtnsBlock = document.querySelector('.skills-buttons div');
 sortBtnsBlock.addEventListener('click', (e) => {
     if (e.target.nodeName === "BUTTON") {
         skills.sortList(e.target.dataset.type);
@@ -98,8 +95,9 @@ sortBtnsBlock.addEventListener('click', (e) => {
 });
 
 // Показ и скрытие меню (гамбургер)
-const header = document.querySelector('.main-header');
-header.addEventListener('click', (e) => {
+const nav = document.querySelector('.main-nav');
+const btn = document.querySelector('.nav-btn');
+btn.addEventListener('click', (e) => {
     e.target.classList.contains('nav-btn_open') ? menu.open() : menu.close();
 });
 menu.close();
