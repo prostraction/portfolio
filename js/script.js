@@ -105,15 +105,19 @@ menu.close();
 // Чекбокс темной темы
 const changeTheme = (theme) => {
     theme
-      ? document.body.classList.remove("dark-theme")
-      : document.body.classList.add("dark-theme");
+      ? document.body.classList.remove('dark-theme')
+      : document.body.classList.add('dark-theme');
+    localStorage.setItem('dark-theme-enabled', theme);
 }
 const checkbox = document.querySelector(".switch-checkbox");
 checkbox.addEventListener("change", (e) => {
     changeTheme(checkbox.checked);
-    localStorage.setItem("dark-theme-enabled", checkbox.checked);
 });
 // Загрузка сохраненной темы
 const darkThemeOnLoad = localStorage.getItem('dark-theme-enabled');
-changeTheme(darkThemeOnLoad === 'true');
-checkbox.setAttribute("checked", darkThemeOnLoad);
+if (darkThemeOnLoad === null) {
+    changeTheme(false);
+    checkbox.checked = false;
+} else {
+    changeTheme(darkThemeOnLoad === "true");
+}
