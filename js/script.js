@@ -120,4 +120,5 @@ if (darkThemeOnLoad === null) {
     checkbox.checked = false;
 } else {
     changeTheme(darkThemeOnLoad === "true");
+    checkbox.checked = (darkThemeOnLoad === "true");
 }
