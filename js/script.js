@@ -101,3 +101,19 @@ btn.addEventListener('click', (e) => {
     e.target.classList.contains('nav-btn_open') ? menu.open() : menu.close();
 });
 menu.close();
+
+// Чекбокс темной темы
+const changeTheme = (theme) => {
+    theme
+      ? document.body.classList.remove("dark-theme")
+      : document.body.classList.add("dark-theme");
+}
+const checkbox = document.querySelector(".switch-checkbox");
+checkbox.addEventListener("change", (e) => {
+    changeTheme(checkbox.checked);
+    localStorage.setItem("dark-theme-enabled", checkbox.checked);
+});
+// Загрузка сохраненной темы
+const darkThemeOnLoad = localStorage.getItem('dark-theme-enabled');
+changeTheme(darkThemeOnLoad === 'true');
+checkbox.setAttribute("checked", darkThemeOnLoad);
