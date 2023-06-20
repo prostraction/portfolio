@@ -2,7 +2,7 @@
 const skills = {
     data: [],
     isSorted: false,
-    inErrorState: false,
+    isInErrorState: false,
     jsonPath: '',
     skillListSelector: null,
     sectionSkillsSelector: null,
@@ -13,10 +13,10 @@ const skills = {
         fetch(jsonPath)
             .then(data => data.json())
             .then(object => {
-                if (this.inErrorState) {
-                    this.inErrorState = false;
+                if (this.isInErrorState) {
+                    this.isInErrorState = false;
                     this.renderErrorToggle(skillListSelector, sectionSkillsSelector);
-                    window.removeEventListener("resize", eventSkillListFailedListener);
+                    window.removeEventListener('resize', eventSkillListFailedListener);
                 }
                 this.data = object;
                 this.generateList(skillListSelector);
@@ -30,9 +30,9 @@ const skills = {
                     {"item": "Sample","level": 60},
                     {"item": "Sample","level": 50}]
                 this.generateList(skillListSelector);
-                this.inErrorState = true;
+                this.isInErrorState = true;
                 this.renderErrorToggle(skillListSelector, sectionSkillsSelector);
-                window.addEventListener("resize", eventSkillListFailedListener);
+                window.addEventListener('resize', eventSkillListFailedListener);
             });
     },
 
@@ -44,37 +44,37 @@ const skills = {
         }
 
         // Если нет ошибки получения данных:
-        if (!this.inErrorState) {
+        if (!this.isInErrorState) {
             // Старое сообщение уже удалено, достаточно просто убрать блюр
-            skillListSelector.style.webkitFilter = "";
+            skillListSelector.style.webkitFilter = '';
             // На этом этапе страница в нормальном состоянии
-            return
+            return;
         }
 
         // Задний фон для "скиллов"
-        skillListSelector.style.webkitFilter = "blur(10px)";
+        skillListSelector.style.webkitFilter = 'blur(10px)';
         skillListSelector.style.zIndex = 0;
 
         // Сообщение об ошибке
         errorMsg = document.createElement('div');
         errorMsg.textContent = 'При загрузке данных произошла ошибка.';
         errorMsg.style.zIndex = 1;
-        errorMsg.style.border = "3px solid #09A494";
-        errorMsg.style.padding = "25px";
-        errorMsg.style.position = "absolute";
-        errorMsg.style.backgroundColor = "var(--white)";
-        errorMsg.style.display = "grid";
-        errorMsg.style.gap = "10px";
-        errorMsg.style.borderRadius = "10px";
+        errorMsg.style.border = '3px solid var(--green)';
+        errorMsg.style.padding = '25px';
+        errorMsg.style.position = 'absolute';
+        errorMsg.style.backgroundColor = 'var(--white)';
+        errorMsg.style.display = 'grid';
+        errorMsg.style.gap = '10px';
+        errorMsg.style.borderRadius = '10px';
 
         // Кнопка в сообщении
         errorBtn = document.createElement('button');
         errorBtn.innerHTML = 'Попробовать еще раз';
         errorMsg.appendChild(errorBtn);
-        errorMsg.id = "createdErrorMessage";
+        errorMsg.id = 'createdErrorMessage';
 
         // Для кнопки добавить ивент для повторной попытки
-        errorBtn.addEventListener("click", () => {
+        errorBtn.addEventListener('click', () => {
             // Разумеется, при текущих условиях мы не выйдем из ошибки (другого пути json файла не будет)
             this.initList(this.jsonPath, this.skillListSelector, this.sectionSkillsSelector);
             // Можно проверить по валидному файлу :)
@@ -84,14 +84,14 @@ const skills = {
         // Темная тема для сообщения
         const darkTheme = localStorage.getItem('dark-theme-disabled');
         if (darkTheme === null || darkTheme === "false") {
-            errorMsg.classList.add('dark-theme')
+            errorMsg.classList.add('dark-theme');
         } else {
-            errorMsg.classList.remove('dark-theme')
+            errorMsg.classList.remove('dark-theme');
         }
 
         // Получить актуальные размеры
-        var rect = skillListSelector.getBoundingClientRect();
-        var browserWidth = Math.max(
+        const rect = skillListSelector.getBoundingClientRect();
+        const browserWidth = Math.max(
             document.body.scrollWidth,
             document.documentElement.scrollWidth,
             document.body.offsetWidth,
@@ -196,7 +196,7 @@ const changeTheme = (theme) => {
 const checkbox = document.querySelector(".switch-checkbox");
 checkbox.addEventListener("change", (e) => {
     changeTheme(checkbox.checked);
-    if (skills.inErrorState) {
+    if (skills.isInErrorState) {
         skills.renderErrorToggle(skills.skillListSelector, skills.sectionSkillsSelector);
     }
 });
