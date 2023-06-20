@@ -47,16 +47,24 @@ const skills = {
             }
             // Старое сообщение уже удалено, достаточно просто убрать блюр
             skillListSelector.style.webkitFilter = '';
+            // Восстанавливаем кнопки
+            this.btns.forEach((btn) => {
+                btn.disabled = false;
+            })
             // На этом этапе страница в нормальном состоянии
             return;
         }
 
-        // Задний фон для "скиллов"
-        skillListSelector.style.webkitFilter = 'blur(10px)';
-        skillListSelector.style.zIndex = 0;
-
         // Создаем сообщение об ошибке, если его нет
         if (errorMsg === null) {
+            this.btns = sortBtnsBlock.querySelectorAll('button')
+            this.btns.forEach((btn) => {
+                btn.disabled = true;
+            })
+            // Задний фон для "скиллов"
+            skillListSelector.style.webkitFilter = 'blur(10px)';
+            skillListSelector.style.zIndex = 0;
+
             errorMsg = document.createElement('div');
             errorMsg.textContent = 'При загрузке данных произошла ошибка.';
             errorMsg.style.zIndex = 1;
@@ -74,7 +82,6 @@ const skills = {
             errorMsg.id = 'createdErrorMessage';
             // Для кнопки добавить ивент для повторной попытки
             errorBtn.addEventListener('click', () => {
-                console.log('clicked')
                 // Разумеется, при текущих условиях мы не выйдем из ошибки (другого пути json файла не будет)
                 this.initList(this.jsonPath, this.skillListSelector, this.sectionSkillsSelector);
                 // Можно проверить по валидному файлу :)
@@ -85,7 +92,7 @@ const skills = {
         }
         
         // Темная тема для сообщения (всега проверяем ее верстку)
-        const darkTheme = localStorage.getItem('dark-theme-disabled');
+        const darkTheme = localStorage.getItem('dark-theme-enabled');
         if (darkTheme === null || darkTheme === "true") {
             errorMsg.classList.add('dark-theme');
         } else {
