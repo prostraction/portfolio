@@ -82,7 +82,7 @@ h1 {
     margin-bottom: 20px;
 }
 
-.skills {
+.skills-wrapper {
     position: relative;
 }
 
@@ -209,6 +209,17 @@ button {
     color: var(--green);
     line-height: 1;
     background-color: transparent;
+}
+
+button:disabled {
+    border: 1px solid var(--black);
+    color: var(--black);
+    opacity: .4;
+}
+
+button:disabled:hover {
+    color: var(--black);
+    background-color: unset;
 }
 
 button:hover {
@@ -606,6 +617,8 @@ button:hover {
     display: grid;
     gap: 10px;
     border-radius: 10px;
+
+    min-width: 320px;
 
     top: 50%;
     left: 50%;

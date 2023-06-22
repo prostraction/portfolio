@@ -16,7 +16,6 @@ const skills = {
                 if (this.isInErrorState) {
                     this.isInErrorState = false;
                     this.renderErrorToggle(skillList, sectionSkills);
-                    window.removeEventListener('resize', eventSkillListFailedListener);
                 }
                 this.data = object;
                 this.generateList(skillList);
@@ -32,7 +31,6 @@ const skills = {
                 this.generateList(skillList);
                 this.isInErrorState = true;
                 this.renderErrorToggle(skillList, sectionSkills);
-                window.addEventListener('resize', eventSkillListFailedListener);
             });
     },
 
@@ -57,6 +55,7 @@ const skills = {
 
         // Создаем сообщение об ошибке, если его нет
         if (errorMsg === null) {
+            skillsWrapper = document.querySelector('.skills-wrapper');
             this.btns = sortBtnsBlock.querySelectorAll('button')
             this.btns.forEach((btn) => {
                 btn.disabled = true;
@@ -84,7 +83,7 @@ const skills = {
             })
             
             // Вставить сообщение об ошибке в центр "скиллов"
-            sectionSkills.insertBefore(errorMsg, skillList);
+            skillsWrapper.append(errorMsg);
         }
     },
     generateList: function(parentElement) {
@@ -124,10 +123,6 @@ const skills = {
     },
 };
 
-// К сожалению, вот так
-const eventSkillListFailedListener = function (e) {
-    skills.renderErrorToggle(skills.skillList, skills.sectionSkills);
-};
 
 // Меню навигации: .main-header
 const menu = {
