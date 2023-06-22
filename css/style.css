@@ -82,6 +82,10 @@ h1 {
     margin-bottom: 20px;
 }
 
+.skills {
+    position: relative;
+}
+
 .contacts, .hobby, .skills, .about, .info, .main-header  {
     margin-bottom: 120px;
 }
@@ -593,4 +597,17 @@ button:hover {
     background-size: 24px;
 }
 
+.error-message {
+    z-index: 1;
+    border: 3px solid var(--green);
+    padding: 25px;
+    position: absolute;
+    background-color: var(--white);
+    display: grid;
+    gap: 10px;
+    border-radius: 10px;
 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

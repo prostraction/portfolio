@@ -4,22 +4,22 @@ const skills = {
     isSorted: false,
     isInErrorState: false,
     jsonPath: '',
-    skillListSelector: null,
-    sectionSkillsSelector: null,
-    initList: function(jsonPath, skillListSelector, sectionSkillsSelector) {
+    skillList: null,
+    sectionSkills: null,
+    initList: function(jsonPath, skillList, sectionSkills) {
         this.jsonPath = jsonPath;
-        this.skillListSelector = skillListSelector;
-        this.sectionSkillsSelector = sectionSkillsSelector;
+        this.skillList = skillList;
+        this.sectionSkills = sectionSkills;
         fetch(jsonPath)
             .then(data => data.json())
             .then(object => {
                 if (this.isInErrorState) {
                     this.isInErrorState = false;
-                    this.renderErrorToggle(skillListSelector, sectionSkillsSelector);
+                    this.renderErrorToggle(skillList, sectionSkills);
                     window.removeEventListener('resize', eventSkillListFailedListener);
                 }
                 this.data = object;
-                this.generateList(skillListSelector);
+                this.generateList(skillList);
             })
             .catch(() => {
                 // Фейковые данные, для отображения при ошибке
@@ -29,14 +29,14 @@ const skills = {
                     {"item": "Sample","level": 70, "iconPath": "img/skills/nodejs.svg"},
                     {"item": "Sample","level": 60, "iconPath": "img/skills/1c.svg"},
                     {"item": "Sample","level": 50, "iconPath": "img/skills/python.svg"}]
-                this.generateList(skillListSelector);
+                this.generateList(skillList);
                 this.isInErrorState = true;
-                this.renderErrorToggle(skillListSelector, sectionSkillsSelector);
+                this.renderErrorToggle(skillList, sectionSkills);
                 window.addEventListener('resize', eventSkillListFailedListener);
             });
     },
 
-    renderErrorToggle: function(skillListSelector, sectionSkillsSelector) {
+    renderErrorToggle: function(skillList, sectionSkills) {
         // Сообщение с ошибкой
         errorMsg = document.querySelector('#createdErrorMessage');
         // Если нет ошибки получения данных:
@@ -46,7 +46,7 @@ const skills = {
                 errorMsg.remove();
             }
             // Старое сообщение уже удалено, достаточно просто убрать блюр
-            skillListSelector.style.webkitFilter = '';
+            skillList.style.webkitFilter = '';
             // Восстанавливаем кнопки
             this.btns.forEach((btn) => {
                 btn.disabled = false;
@@ -62,56 +62,30 @@ const skills = {
                 btn.disabled = true;
             })
             // Задний фон для "скиллов"
-            skillListSelector.style.webkitFilter = 'blur(10px)';
-            skillListSelector.style.zIndex = 0;
+            skillList.style.webkitFilter = 'blur(10px)';
+            skillList.style.zIndex = 0;
 
             errorMsg = document.createElement('div');
-            errorMsg.textContent = 'При загрузке данных произошла ошибка.';
-            errorMsg.style.zIndex = 1;
-            errorMsg.style.border = '3px solid var(--green)';
-            errorMsg.style.padding = '25px';
-            errorMsg.style.position = 'absolute';
-            errorMsg.style.backgroundColor = 'var(--white)';
-            errorMsg.style.display = 'grid';
-            errorMsg.style.gap = '10px';
-            errorMsg.style.borderRadius = '10px';
+            errorMsg.textContent = 'При загрузке данных произошла ошибка.'
+            errorMsg.classList.add('error-message');
+
+
             // Кнопка в сообщении
             errorBtn = document.createElement('button');
-            errorBtn.innerHTML = 'Попробовать еще раз';
+            errorBtn.textContent = 'Попробовать еще раз';
             errorMsg.appendChild(errorBtn);
             errorMsg.id = 'createdErrorMessage';
             // Для кнопки добавить ивент для повторной попытки
             errorBtn.addEventListener('click', () => {
                 // Разумеется, при текущих условиях мы не выйдем из ошибки (другого пути json файла не будет)
-                this.initList(this.jsonPath, this.skillListSelector, this.sectionSkillsSelector);
+                this.initList(this.jsonPath, this.skillList, this.sectionSkills);
                 // Можно проверить по валидному файлу :)
-                //this.initList('db/skills.json', this.skillListSelector, this.sectionSkillsSelector);
+                //this.initList('db/skills.json', this.skillList, this.sectionSkills);
             })
+            
             // Вставить сообщение об ошибке в центр "скиллов"
-            sectionSkillsSelector.insertBefore(errorMsg, skillListSelector);
+            sectionSkills.insertBefore(errorMsg, skillList);
         }
-        
-        // Темная тема для сообщения (всега проверяем ее верстку)
-        const darkTheme = localStorage.getItem('dark-theme-enabled');
-        if (darkTheme === null || darkTheme === "true") {
-            errorMsg.classList.add('dark-theme');
-        } else {
-            errorMsg.classList.remove('dark-theme');
-        }
-
-        // Получить актуальные размеры
-        const rect = skillListSelector.getBoundingClientRect();
-        const browserWidth = Math.max(
-            document.body.scrollWidth,
-            document.documentElement.scrollWidth,
-            document.body.offsetWidth,
-            document.documentElement.offsetWidth,
-            document.documentElement.clientWidth
-        );
-
-        errorMsg.style.top = window.scrollY + rect.top + (rect.height / 2) - errorMsg.getBoundingClientRect().height / 2 + 'px';
-        errorMsg.style.left = (browserWidth / 2 - errorMsg.getBoundingClientRect().width / 2) + 'px';
-
     },
     generateList: function(parentElement) {
         parentElement.innerHTML = '';
@@ -146,13 +120,13 @@ const skills = {
         } else {
             this.data.reverse();
         }
-        this.generateList(skillListSelector);
+        this.generateList(skillList);
     },
 };
 
 // К сожалению, вот так
 const eventSkillListFailedListener = function (e) {
-    skills.renderErrorToggle(skills.skillListSelector, skills.sectionSkillsSelector);
+    skills.renderErrorToggle(skills.skillList, skills.sectionSkills);
 };
 
 // Меню навигации: .main-header
@@ -172,9 +146,9 @@ const menu = {
 };
 
 // Первое создание списка навыков
-const skillListSelector = document.querySelector('dl.skill-list');
-const sectionSkillsSelector = document.querySelector('section.skills');
-skills.initList('db/skills.json', skillListSelector, sectionSkillsSelector);
+const skillList = document.querySelector('dl.skill-list');
+const sectionSkills = document.querySelector('section.skills');
+skills.initList('db/skills.json', skillList, sectionSkills);
 
 // Сортировки списка по кнопкам
 const sortBtnsBlock = document.querySelector('.skills-buttons div');
@@ -202,9 +176,6 @@ const changeToDarkTheme = (theme) => {
 const checkbox = document.querySelector(".switch-checkbox");
 checkbox.addEventListener("change", (e) => {
     changeToDarkTheme(!checkbox.checked);
-    if (skills.isInErrorState) {
-        skills.renderErrorToggle(skills.skillListSelector, skills.sectionSkillsSelector);
-    }
 });
 // Загрузка сохраненной темы
 const darkThemeOnLoad = localStorage.getItem('dark-theme-enabled');
